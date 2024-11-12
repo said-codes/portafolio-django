@@ -1,0 +1,30 @@
+<!-- blog/templates/blog/post_list.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Blog</h2>
+        {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">{{ post.title }}</h3>
+                    <p class="card-text">{{ post.content|slice:":100" }}...</p>
+                    
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" class="card-img-top" alt="Imagen de la publicación">
+                    {% endif %}
+                    
+                    <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Leer más</a>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="pagination">
+            {% if posts.has_previous %}
+                <a href="?page={{ posts.previous_page_number }}" class="btn btn-outline-primary">Anterior</a>
+            {% endif %}
+            {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number }}" class="btn btn-outline-primary">Siguiente</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

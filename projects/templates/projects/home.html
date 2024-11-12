@@ -1,0 +1,36 @@
+<!-- portfolio/templates/portfolio/home.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <section class="text-center mb-5">
+        <h1>Mi Portafolio</h1>
+        <p>¡Hola! Soy un desarrollador fullstack. Aquí puedes ver algunos de mis proyectos y publicaciones.</p>
+    </section>
+
+    <section>
+        <h2>Proyectos</h2>
+        <div class="row">
+            {% for project in projects %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        {% if project.image %}
+                            <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <p class="card-text">{{ project.description }}</p>
+                            <a href="{{ project.github_url }}" target="_blank" class="btn btn-primary">Ver en GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section>
+        <h2>Blog</h2>
+        <p>Lee mis publicaciones en el <a href="{% url 'blog:post_list' %}">blog</a>.</p>
+    </section>
+</div>
+{% endblock %}

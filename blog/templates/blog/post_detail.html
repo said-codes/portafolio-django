@@ -1,0 +1,16 @@
+<!-- blog/templates/blog/post_detail.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <div class="container my-5">
+        <h2 class="text-center mb-4">{{ post.title }}</h2>
+        <p><strong>Publicado el:</strong> {{ post.published_at }}</p>
+        
+        {% if post.image %}
+            <img src="{{ post.image.url }}" class="img-fluid mb-4" alt="Imagen de la publicación">
+        {% endif %}
+        
+        <p>{{ post.content }}</p>
+        <a href="{% url 'blog:post_list' %}" class="btn btn-secondary">Volver al blog</a>
+    </div>
+{% endblock %}
