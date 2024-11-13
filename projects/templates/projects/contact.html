@@ -1,8 +1,7 @@
-<!-- portfolio/templates/portfolio/contact.html -->
 {% extends "base_generic.html" %}
 
 {% block content %}
-<div class="container my-5">
+<div class="container custom-contact-container my-5">
     <h2 class="text-center mb-4">Contacto</h2>
     <p class="text-center mb-5">¿Tienes alguna pregunta o quieres trabajar conmigo? ¡Envíame un mensaje!</p>
 
@@ -35,4 +34,16 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 </div>
+<style>
+    .custom-contact-container {
+    margin-top: 50px; /* Ajusta el valor para más o menos margen superior */
+    width: 70%; /* Ajusta el ancho del contenedor */
+    max-width: 800px; /* O limita el ancho máximo si es necesario */
+}
+
+.footer{
+    height: 400px;
+}
+
+</style>
 {% endblock %}
