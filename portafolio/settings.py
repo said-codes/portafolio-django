@@ -34,8 +34,8 @@ SECRET_KEY = 'django-insecure-$h%a)^h&i7wo-#5e2j#+g%0$hm2ps2_2=dr6-(hto3vxww6=q!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["portafolio-django.onrender.com"]
-# portafolio/settings.py
+ALLOWED_HOSTS = ["*"]
+
 
 
 # Rutas para manejar archivos de medios (imágenes, archivos, etc.)
